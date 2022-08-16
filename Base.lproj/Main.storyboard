@@ -84,20 +84,17 @@
                                 <rect key="frame" x="335" y="44" width="40" height="734"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="L6R-Cm-NbS">
-                                <rect key="frame" x="143" y="479" width="89" height="100"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="89" id="C6T-Lu-pVI"/>
-                                    <constraint firstAttribute="height" constant="100" id="D7p-Xa-2DQ"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="weE-74-b2V" appends="YES" id="I8a-Ry-JTG"/>
-                                </connections>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="Asteroid" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-NI-nm9">
                                 <rect key="frame" x="0.0" y="44" width="39" height="734"/>
                                 <gestureRecognizers/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="L6R-Cm-NbS">
+                                <rect key="frame" x="143" y="356" width="88" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="weE-74-b2V" appends="YES" id="I8a-Ry-JTG"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -106,17 +103,16 @@
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="03n-zF-eOo"/>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="10y-hL-WO6"/>
                             <constraint firstItem="ZCF-t1-heo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Gs-bO-NE7"/>
+                            <constraint firstItem="ZCF-t1-heo" firstAttribute="width" secondItem="7X5-NI-nm9" secondAttribute="width" multiplier="1.02564" id="3Xi-Ct-HGO"/>
                             <constraint firstItem="7X5-NI-nm9" firstAttribute="top" secondItem="ZCF-t1-heo" secondAttribute="top" id="7Ga-pZ-KTn"/>
+                            <constraint firstItem="ZCF-t1-heo" firstAttribute="leading" secondItem="7X5-NI-nm9" secondAttribute="trailing" constant="296" id="CHM-TL-E3G"/>
                             <constraint firstItem="7X5-NI-nm9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HGg-K6-nzE"/>
                             <constraint firstItem="7X5-NI-nm9" firstAttribute="bottom" secondItem="ZCF-t1-heo" secondAttribute="bottom" id="LQV-wl-bwC"/>
-                            <constraint firstItem="L6R-Cm-NbS" firstAttribute="leading" secondItem="7X5-NI-nm9" secondAttribute="trailing" constant="104" id="OrA-bW-QMq"/>
-                            <constraint firstItem="L6R-Cm-NbS" firstAttribute="centerX" secondItem="f38-Ge-PWn" secondAttribute="centerX" id="Ude-Ul-F8p"/>
                             <constraint firstItem="ZCF-t1-heo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cUa-dc-cbx"/>
                             <constraint firstItem="ZCF-t1-heo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eCq-9O-DEN"/>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="olN-xX-Epa"/>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rU9-5G-Nhh"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="leading" secondItem="L6R-Cm-NbS" secondAttribute="trailing" constant="103" id="tdf-a6-AT5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="L6R-Cm-NbS" secondAttribute="bottom" constant="199" id="viP-a6-TML"/>
+                            <constraint firstItem="ZCF-t1-heo" firstAttribute="height" secondItem="7X5-NI-nm9" secondAttribute="height" id="xUx-nL-mfl"/>
                         </constraints>
                     </view>
                     <connections>

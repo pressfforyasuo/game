@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var timer = Timer()
     //MARK: - IBOutlets
     @IBOutlet weak var asteroidsLeft: UIImageView!
     @IBOutlet weak var ship: UIImageView!
@@ -15,7 +16,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        coordinatesShip()
+        rocketCreate()
     }
+    
     //MARK: - IBAction
     @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.view)
@@ -33,7 +37,7 @@ class ViewController: UIViewController {
     }
     //MARK: - flow funcs
     private func destroyShip() {
-        if ship.frame.origin.x <=  asteroidsLeft.frame.size.width || ship.frame.size.width + ship.frame.origin.x >= asteroidsRight.frame.origin.x {
+        if self.ship.frame.origin.x <=  self.asteroidsLeft.frame.size.width || self.ship.frame.size.width + self.ship.frame.origin.x >= self.asteroidsRight.frame.origin.x {
             let endGameView = UIView()
             
             endGameView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -54,9 +58,63 @@ class ViewController: UIViewController {
             
             backButton.addGestureRecognizer(recognizer)
             
-        } else {
-            print("ok")
+            self.timer.invalidate()
         }
     }
+    private func destroyShipRocket() {
+        let endGameView = UIView()
+        
+        endGameView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        endGameView.backgroundColor = UIColor(red: 0.35, green: 0.20, blue: 0.31, alpha: 1.00)
+        
+        self.view.addSubview(endGameView)
+        
+        let backButton = UIButton()
+        
+        backButton.frame = CGRect(x: self.view.frame.size.width/2 - 100, y: self.view.frame.size.height/2 - 30, width: 200, height: 60)
+        backButton.setTitle("Back", for: .normal)
+        backButton.layer.cornerRadius = 30
+        backButton.backgroundColor = .blue
+        
+        self.view.addSubview(backButton)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(backButtonTouch))
+        
+        backButton.addGestureRecognizer(recognizer)
+        
+        self.timer.invalidate()
+        
+    }
+    
+    private func rocketCreate() {
+        timer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { _ in
+            let rocketImage = UIImageView()
+            
+            rocketImage.frame = CGRect(x: self.randomCoordinates(), y: 0, width: 30, height: 70)
+            
+            rocketImage.image = UIImage(named: "Rocket")
+            rocketImage.contentMode = .scaleToFill
+            
+            self.view.addSubview(rocketImage)
+            
+            
+            let timers = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+                rocketImage.frame.origin.y += 50
+                if self.ship.frame.origin.x + self.ship.frame.size.width >= rocketImage.frame.origin.x && self.ship.frame.origin.x <= rocketImage.frame.origin.x + rocketImage.frame.size.width && self.ship.frame.origin.y <= rocketImage.frame.origin.y + rocketImage.frame.size.height && self.ship.frame.origin.y + self.ship.frame.size.height >= rocketImage.frame.origin.y {
+                    self.destroyShipRocket()
+                }
+            }
+        }
+    }
+    
+    private func randomCoordinates() -> (CGFloat) {
+        let x = CGFloat.random(in: self.asteroidsLeft.frame.size.width..<self.asteroidsRight.frame.origin.x - 30)
+        
+        return x
+    }
+    
+    private func coordinatesShip() {
+        self.ship.frame.origin.x = self.view.frame.size.width/2 - 44
+        self.ship.frame.origin.y = self.view.frame.size.width/2 - 50
+    }
 }
-
