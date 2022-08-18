@@ -98,7 +98,7 @@ class ViewController: UIViewController {
             self.view.addSubview(rocketImage)
             
             
-            let timers = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+            _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
                 rocketImage.frame.origin.y += 50
                 if self.ship.frame.origin.x + self.ship.frame.size.width >= rocketImage.frame.origin.x && self.ship.frame.origin.x <= rocketImage.frame.origin.x + rocketImage.frame.size.width && self.ship.frame.origin.y <= rocketImage.frame.origin.y + rocketImage.frame.size.height && self.ship.frame.origin.y + self.ship.frame.size.height >= rocketImage.frame.origin.y {
                     self.destroyShipRocket()
@@ -115,6 +115,6 @@ class ViewController: UIViewController {
     
     private func coordinatesShip() {
         self.ship.frame.origin.x = self.view.frame.size.width/2 - 44
-        self.ship.frame.origin.y = self.view.frame.size.width/2 - 50
+        self.ship.frame.origin.y = self.view.frame.size.width 
     }
 }
