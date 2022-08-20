@@ -129,14 +129,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="f38-Ge-PWn">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="Asteroid" translatesAutoresizingMaskIntoConstraints="NO" id="ZCF-t1-heo">
-                                <rect key="frame" x="335" y="44" width="40" height="734"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="Asteroid" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-NI-nm9">
-                                <rect key="frame" x="0.0" y="44" width="39" height="734"/>
-                                <gestureRecognizers/>
-                            </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="L6R-Cm-NbS">
                                 <rect key="frame" x="143" y="356" width="88" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -151,22 +143,11 @@
                         <constraints>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="03n-zF-eOo"/>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="10y-hL-WO6"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Gs-bO-NE7"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="width" secondItem="7X5-NI-nm9" secondAttribute="width" multiplier="1.02564" id="3Xi-Ct-HGO"/>
-                            <constraint firstItem="7X5-NI-nm9" firstAttribute="top" secondItem="ZCF-t1-heo" secondAttribute="top" id="7Ga-pZ-KTn"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="leading" secondItem="7X5-NI-nm9" secondAttribute="trailing" constant="296" id="CHM-TL-E3G"/>
-                            <constraint firstItem="7X5-NI-nm9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HGg-K6-nzE"/>
-                            <constraint firstItem="7X5-NI-nm9" firstAttribute="bottom" secondItem="ZCF-t1-heo" secondAttribute="bottom" id="LQV-wl-bwC"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cUa-dc-cbx"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eCq-9O-DEN"/>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="olN-xX-Epa"/>
                             <constraint firstItem="f38-Ge-PWn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rU9-5G-Nhh"/>
-                            <constraint firstItem="ZCF-t1-heo" firstAttribute="height" secondItem="7X5-NI-nm9" secondAttribute="height" id="xUx-nL-mfl"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="asteroidsLeft" destination="7X5-NI-nm9" id="YOC-R4-X8l"/>
-                        <outlet property="asteroidsRight" destination="ZCF-t1-heo" id="dHC-GV-xpt"/>
                         <outlet property="ship" destination="L6R-Cm-NbS" id="jrf-5u-8Dw"/>
                     </connections>
                 </viewController>
@@ -362,7 +343,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Asteroid" width="39.333332061767578" height="335.33334350585938"/>
         <image name="Background" width="2666.666748046875" height="1498"/>
         <image name="SpaceShip" width="152.33332824707031" height="341.33334350585938"/>
         <namedColor name="AccentColor">
