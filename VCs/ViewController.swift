@@ -13,13 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var asteroidsLeft: UIImageView!
     @IBOutlet weak var ship: UIImageView!
     @IBOutlet weak var asteroidsRight: UIImageView!
-    
+    //MARK: - lifecicle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         coordinatesShip()
         rocketCreate()
     }
-    
     //MARK: - IBAction
     @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.view)
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
             view.center = CGPoint(x:view.center.x + translation.x,
                                   y:view.center.y + translation.y)
         }
-        
         recognizer.setTranslation( CGPoint(x: 0, y: 0), in: self.view)
         destroyShip()
     }
@@ -83,7 +81,6 @@ class ViewController: UIViewController {
         backButton.addGestureRecognizer(recognizer)
         
         self.timer.invalidate()
-        
     }
     
     private func rocketCreate() {
@@ -96,7 +93,6 @@ class ViewController: UIViewController {
             rocketImage.contentMode = .scaleToFill
             
             self.view.addSubview(rocketImage)
-            
             
             _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
                 rocketImage.frame.origin.y += 50

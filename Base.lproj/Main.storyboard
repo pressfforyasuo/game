@@ -297,6 +297,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="&gt;"/>
+                                        <connections>
+                                            <action selector="changeShipRight" destination="v7D-In-FG5" eventType="touchUpInside" id="bc9-eU-b1O"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYd-xb-Di9">
                                         <rect key="frame" x="44" y="42" width="44" height="44"/>
@@ -306,6 +309,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="&lt;"/>
+                                        <connections>
+                                            <action selector="changeShipLeft" destination="v7D-In-FG5" eventType="touchUpInside" id="G0h-fK-U2P"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="Hgu-dc-gB1">
                                         <rect key="frame" x="143.66666666666666" y="14" width="88" height="100"/>
@@ -347,6 +353,9 @@
                     </view>
                     <connections>
                         <outlet property="LabelDiffucult" destination="QKx-GK-DA9" id="FY1-mo-71K"/>
+                        <outlet property="bacgroundViewShip" destination="ryn-AF-v5R" id="CWV-oV-4QK"/>
+                        <outlet property="background" destination="GMf-yt-hRe" id="WdF-u9-Tyo"/>
+                        <outlet property="ship" destination="Hgu-dc-gB1" id="61j-4G-JJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abl-ez-k8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
