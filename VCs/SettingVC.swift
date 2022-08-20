@@ -9,8 +9,6 @@ import UIKit
 
 class SettingVC: UIViewController {
     //MARK: - IBOutlet
-    @IBOutlet weak var background: UIImageView!
-    @IBOutlet weak var bacgroundViewShip: UIView!
     @IBOutlet weak var LabelDiffucult: UILabel!
     @IBOutlet weak var ship: UIImageView!
     //MARK: - let/var
