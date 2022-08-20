@@ -353,8 +353,6 @@
                     </view>
                     <connections>
                         <outlet property="LabelDiffucult" destination="QKx-GK-DA9" id="FY1-mo-71K"/>
-                        <outlet property="bacgroundViewShip" destination="ryn-AF-v5R" id="CWV-oV-4QK"/>
-                        <outlet property="background" destination="GMf-yt-hRe" id="WdF-u9-Tyo"/>
                         <outlet property="ship" destination="Hgu-dc-gB1" id="61j-4G-JJp"/>
                     </connections>
                 </viewController>
