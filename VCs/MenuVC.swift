@@ -8,13 +8,9 @@
 import UIKit
 
 class MenuVC: UIViewController {
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
     
     @IBAction func startButtonTouch(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
@@ -22,4 +18,9 @@ class MenuVC: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBAction func settingButtonTouch(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
