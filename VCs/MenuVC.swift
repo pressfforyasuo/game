@@ -8,10 +8,14 @@
 import UIKit
 
 class MenuVC: UIViewController {
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     //MARK: - lifecicle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         savePathImage()
+        startButton.dropShadow()
+        settingsButton.dropShadow()
     }
     //MARK: - IBAction
     @IBAction func startButtonTouch(_ sender: UIButton) {
@@ -37,5 +41,18 @@ class MenuVC: UIViewController {
                 UserDefaults.standard.set(imageName, forKey: "BlackShip")
             }
         }
+    }
+}
+
+extension UIView {
+    func dropShadow() {
+            layer.masksToBounds = false
+            layer.shadowColor = UIColor.black.cgColor
+            layer.shadowOpacity = 1
+            layer.shadowOffset = CGSize(width: 0, height: 10)
+            layer.shadowRadius = 13
+            
+            layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+            layer.shouldRasterize = true
     }
 }

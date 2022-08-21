@@ -74,22 +74,6 @@
                                     <action selector="settingButtonTouch:" destination="hoY-6j-r6x" eventType="touchUpInside" id="0fd-6r-NnY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOU-tk-9iV">
-                                <rect key="frame" x="113" y="357" width="149" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="nbg-81-ss5"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Game stats">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="startButtonTouch:" destination="hoY-6j-r6x" eventType="touchUpInside" id="LqM-d9-eP0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zdc-Tq-pYx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,17 +86,18 @@
                             <constraint firstItem="Uc3-7Q-DjB" firstAttribute="top" secondItem="DSK-Ih-saM" secondAttribute="bottom" constant="50" id="Md8-mD-avO"/>
                             <constraint firstItem="zdc-Tq-pYx" firstAttribute="trailing" secondItem="Uc3-7Q-DjB" secondAttribute="trailing" constant="113" id="aO9-eZ-QEi"/>
                             <constraint firstItem="zFi-WF-SGL" firstAttribute="trailing" secondItem="zdc-Tq-pYx" secondAttribute="trailing" id="bkb-4H-EQe"/>
-                            <constraint firstItem="zdc-Tq-pYx" firstAttribute="trailing" secondItem="jOU-tk-9iV" secondAttribute="trailing" constant="113" id="d4N-uD-5Ta"/>
                             <constraint firstItem="zdc-Tq-pYx" firstAttribute="trailing" secondItem="DSK-Ih-saM" secondAttribute="trailing" constant="113" id="fUF-CQ-om7"/>
-                            <constraint firstItem="jOU-tk-9iV" firstAttribute="top" secondItem="Uc3-7Q-DjB" secondAttribute="bottom" constant="50" id="flJ-Cs-Ejo"/>
                             <constraint firstItem="zFi-WF-SGL" firstAttribute="leading" secondItem="zdc-Tq-pYx" secondAttribute="leading" id="jhg-GM-b1X"/>
                             <constraint firstAttribute="bottom" secondItem="zFi-WF-SGL" secondAttribute="bottom" id="u29-AK-i8q"/>
                             <constraint firstItem="DSK-Ih-saM" firstAttribute="top" secondItem="wor-Bi-5aJ" secondAttribute="bottom" constant="96" id="wZJ-C4-I9n"/>
-                            <constraint firstItem="jOU-tk-9iV" firstAttribute="leading" secondItem="zdc-Tq-pYx" secondAttribute="leading" constant="113" id="yev-hs-zmd"/>
                             <constraint firstItem="zdc-Tq-pYx" firstAttribute="trailing" secondItem="wor-Bi-5aJ" secondAttribute="trailing" constant="16" id="zwT-fQ-p7z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lZn-Oq-4af"/>
+                    <connections>
+                        <outlet property="settingsButton" destination="Uc3-7Q-DjB" id="BFg-Ew-EXL"/>
+                        <outlet property="startButton" destination="DSK-Ih-saM" id="Kmd-4e-8NM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxw-oS-GxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,22 +143,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-255.07246376811597" y="71.651785714285708"/>
-        </scene>
-        <!--Game ScorsVC-->
-        <scene sceneID="PVW-rm-RKe">
-            <objects>
-                <viewController storyboardIdentifier="GameScorsVC" id="GjN-5k-h7P" customClass="GameScorsVC" customModule="game" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rGw-ou-GXD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="H0F-xN-Ivo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nk-6I-GNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1095" y="809"/>
+            <point key="canvasLocation" x="-255.19999999999999" y="70.935960591133011"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="Vqa-hv-5JN">
@@ -334,6 +304,11 @@
                     </view>
                     <connections>
                         <outlet property="LabelDiffucult" destination="QKx-GK-DA9" id="FY1-mo-71K"/>
+                        <outlet property="leftButton" destination="tYd-xb-Di9" id="IVK-Hv-kFt"/>
+                        <outlet property="leftButtonLabel" destination="NJN-iR-4aZ" id="kwV-X5-Vdg"/>
+                        <outlet property="rightButton" destination="ldw-Zg-htG" id="1LE-eW-qJ7"/>
+                        <outlet property="rightButtonLabel" destination="Ztw-8Y-AuQ" id="PYj-PH-e9U"/>
+                        <outlet property="saveButton" destination="9Vj-kW-Rt3" id="nC2-M5-tVp"/>
                         <outlet property="ship" destination="Hgu-dc-gB1" id="61j-4G-JJp"/>
                     </connections>
                 </viewController>

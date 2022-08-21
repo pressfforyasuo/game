@@ -8,15 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: - let/var
     private var timer = Timer()
+    private var difficult = ""
+    private let key = "difficult"
     //MARK: - IBOutlets
     @IBOutlet weak var ship: UIImageView!
     //MARK: - lifecicle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         coordinatesShip()
-        rocketCreate()
         loadShip()
+        loadDifficult()
+        rocketCreate(time: spawnTime())
     }
     //MARK: - IBAction
     @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
@@ -32,6 +36,15 @@ class ViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     //MARK: - flow funcs
+    private func loadDifficult() {
+        if let data = UserDefaults.standard.string(forKey: key) {
+            difficult = data
+        } else {
+            UserDefaults.standard.set("easy", forKey: key)
+            difficult = UserDefaults.standard.string(forKey: key)!
+        }
+    }
+    
     private func destroyShipRocket() {
         let endGameView = UIView()
         
@@ -56,8 +69,18 @@ class ViewController: UIViewController {
         self.timer.invalidate()
     }
     
-    private func rocketCreate() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
+    private func spawnTime() -> Double {
+        switch difficult {
+        case "easy": return 1.4
+        case "medium": return 1
+        case "hard": return 0.7
+        default: break
+        }
+        return 1
+    }
+    
+    private func rocketCreate(time: Double) {
+        timer = Timer.scheduledTimer(withTimeInterval: time, repeats: true) { _ in
             let rocketImage = UIImageView()
             
             rocketImage.frame = CGRect(x: self.randomCoordinates(), y: 0, width: 30, height: 70)
@@ -67,10 +90,13 @@ class ViewController: UIViewController {
             
             self.view.addSubview(rocketImage)
             
-            _ = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
-                rocketImage.frame.origin.y += 8
+            _ = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+                rocketImage.frame.origin.y += 3
                 if self.ship.frame.origin.x + self.ship.frame.size.width >= rocketImage.frame.origin.x && self.ship.frame.origin.x <= rocketImage.frame.origin.x + rocketImage.frame.size.width && self.ship.frame.origin.y <= rocketImage.frame.origin.y + rocketImage.frame.size.height && self.ship.frame.origin.y + self.ship.frame.size.height >= rocketImage.frame.origin.y {
                     self.destroyShipRocket()
+                }
+                if rocketImage.frame.origin.y >= self.view.frame.size.height {
+                    rocketImage.removeFromSuperview()
                 }
             }
         }
@@ -84,7 +110,7 @@ class ViewController: UIViewController {
     
     private func coordinatesShip() {
         self.ship.frame.origin.x = self.view.frame.size.width/2 - 44
-        self.ship.frame.origin.y = self.view.frame.size.width 
+        self.ship.frame.origin.y = self.view.frame.size.width
     }
     
     private func loadShip() {
